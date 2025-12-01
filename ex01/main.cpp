@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:50:14 by scavalli          #+#    #+#             */
-/*   Updated: 2025/05/12 17:59:01 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/11/19 14:04:01 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ int	main()
 	std::string cmd;
 	while(1)
 	{
-		std::cout << "Commande : ADD / SEARCH / EXIT\n";
-		std::cin >> cmd;
-		std::cin.ignore();
+		cmd = "";
 		while(cmd != "ADD" && cmd != "SEARCH" && cmd != "EXIT")
 		{
+			std::cout << "Commande : ADD / SEARCH / EXIT\n";
 			std::cin >> cmd;
 			std::cin.ignore();
 		}

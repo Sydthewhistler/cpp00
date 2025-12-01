@@ -1,9 +1,12 @@
 #include "Contact.hpp"
-#include <codecvt>
+#include <iomanip>
 #include <ios>
 #include <iostream>
 
-Contact::Contact() : m_firstName(), m_lastName(), m_nickname(), m_phoneNumber(), m_darkestSecret(){}
+Contact::Contact() : m_firstName(), m_lastName(), m_nickname(), m_phoneNumber(),
+	m_darkestSecret()
+{
+}
 
 void Contact::change_contact()
 {
@@ -28,49 +31,25 @@ void Contact::print_contact() const
 	std::cout << "Darkest secret : " << m_darkestSecret << "\n";
 }
 
-
-
+void Contact::print_field(const std::string str) const
+{
+	if (str.size() > 10)
+	{
+		std::cout << std::setw(9) << std::setfill(' ') << str.substr(0,9) << ".";
+	}
+	else
+	{
+		std::cout << std::setw(10) << std::setfill(' ') << str;
+	}
+}
 
 void Contact::resume_contact(int index) const
 {
 	std::cout << index << " |";
-	for(int i = 0; i < 10; i++)
-	{
-		if(i == 9 && m_firstName[i+1])
-		{
-			std::cout << ".";
-			break;
-		}
-		if(m_firstName[i])
-			std::cout << m_firstName[i];
-		else
-			std::cout << " ";
-	}
+	print_field(m_firstName);
 	std::cout << "|";
-	for(int i = 0; i < 10; i++)
-	{
-		if(i == 9 && m_lastName[i+1])
-		{
-			std::cout << ".";
-			break;
-		}
-		if(m_lastName[i])
-			std::cout << m_lastName[i];
-		else
-			std::cout << " ";
-	}
+	print_field(m_lastName);
 	std::cout << "|";
-	for(int i = 0; i < 10; i++)
-	{
-		if(i == 9 && m_nickname[i+1])
-		{
-			std::cout << ".";
-			break;
-		}
-		if(m_nickname[i])
-			std::cout << m_nickname[i];
-		else
-		 	std::cout << " ";
-	}
+	print_field(m_nickname);
 	std::cout << "\n";
 }

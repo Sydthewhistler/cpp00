@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:27:03 by scavalli          #+#    #+#             */
-/*   Updated: 2025/05/12 15:38:10 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/11/19 12:17:02 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int main(int ac, char **av)
 	{
 		for(int j = 0; av[i][j] ; j++)
 		{
-			if('a' <= av[i][j] && av[i][j] <= 'z')
-				av[i][j] -= 32;
+			std::cout << (char)std::toupper(av[i][j]);
 		}
-		std::cout << av[i];
 	}
 	std::cout << '\n';
 	return (0);

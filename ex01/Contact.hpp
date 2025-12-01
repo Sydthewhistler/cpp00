@@ -10,8 +10,8 @@ class Contact
 	Contact();
 	void print_contact() const;
 	void resume_contact(int index) const;
-
-	void	change_contact();
+	void print_field(const std::string str) const;
+	void change_contact();
 
 	private :
 
